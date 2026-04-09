@@ -1,32 +1,8 @@
 [
   {
-    "id": "template-provider",
-    "name": "Template Provider",
-    "description": "A starter template for creating Nuvio providers.",
-    "version": "1.0.0",
-    "author": "Your Name",
-    "supportedTypes": [
-      "movie",
-      "tv"
-    ],
-    "filename": "providers/template.js",
-    "enabled": false,
-    "logo": "",
-    "contentLanguage": [
-      "en"
-    ],
-    "formats": [
-      "mp4",
-      "mkv"
-    ],
-    "limited": false,
-    "disabledPlatforms": [],
-    "supportsExternalPlayer": true
-  },
-  {
     "id": "animevietsub",
     "name": "Animevietsub",
-    "description": "Provider for Animevietsub",
+    "description": "Provider cho Animevietsub (Tiếng Việt)",
     "version": "1.0.0",
     "author": "Antigravity",
     "supportedTypes": [
@@ -37,6 +13,7 @@
     "enabled": true,
     "logo": "",
     "contentLanguage": [
+      "en",
       "vi"
     ],
     "formats": [
