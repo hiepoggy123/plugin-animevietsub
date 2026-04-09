@@ -1,28 +1,32 @@
-[
-  {
-    "id": "animevietsub",
-    "name": "Animevietsub",
-    "description": "Provider cho Animevietsub (Tiếng Việt)",
-    "version": "1.0.0",
-    "author": "Antigravity",
-    "supportedTypes": [
-      "movie",
-      "tv"
-    ],
-    "filename": "providers/animevietsub.js",
-    "enabled": true,
-    "logo": "",
-    "contentLanguage": [
-      "en",
-      "vi"
-    ],
-    "formats": [
-      "mp4",
-      "mkv",
-      "m3u8"
-    ],
-    "limited": false,
-    "disabledPlatforms": [],
-    "supportsExternalPlayer": true
-  }
-]
+{
+  "name": "Animevietsub Repo",
+  "version": "1.0.0",
+  "scrapers": [
+    {
+      "id": "animevietsub",
+      "name": "Animevietsub",
+      "description": "Provider cho Animevietsub (Tiếng Việt)",
+      "version": "1.0.0",
+      "author": "Antigravity",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/animevietsub.js",
+      "enabled": true,
+      "logo": "",
+      "contentLanguage": [
+        "vi",
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    }
+  ]
+}
