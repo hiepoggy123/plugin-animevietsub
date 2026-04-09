@@ -1,6 +1,6 @@
 /**
  * animevietsub - Built from src/animevietsub/
- * Generated: 2026-04-09T08:47:42.924Z
+ * Generated: 2026-04-09T09:31:19.053Z
  */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -86,22 +86,17 @@ function fetchText(_0) {
 }
 function getMediaTitle(tmdbId, mediaType) {
   return __async(this, null, function* () {
+    const TMDB_API_KEY = "1b3113663c9004682ed61086cf967c44";
     const typeAlias = mediaType === "tv" ? "tv" : "movie";
-    const url = `https://www.themoviedb.org/${typeAlias}/${tmdbId}`;
+    const url = `https://api.themoviedb.org/3/${typeAlias}/${tmdbId}?api_key=${TMDB_API_KEY}&language=vi-VN`;
     try {
-      const res = yield fetchText(url, { headers: { "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7" } });
+      const res = yield fetchText(url);
       if (!res)
         return null;
-      const titleMatch = res.match(/<title>(.*?) \(.*?\).*?<\/title>/);
-      if (titleMatch && titleMatch[1]) {
-        return titleMatch[1].trim();
-      }
-      const fallbackMatch = res.match(/<title>(.*?) \—/);
-      if (fallbackMatch && fallbackMatch[1]) {
-        return fallbackMatch[1].trim();
-      }
+      const data = JSON.parse(res);
+      return data.title || data.name || data.original_title || data.original_name;
     } catch (e) {
-      console.error(`[Animevietsub] TMDB parse error: ${e.message}`);
+      console.error(`[Animevietsub] TMDB JSON parse error: ${e.message}`);
     }
     return null;
   });
